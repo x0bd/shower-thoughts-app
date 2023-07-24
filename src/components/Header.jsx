@@ -14,7 +14,7 @@ const Header = ({ showForm, handleShowForm }) => {
 				className="btn btn-large btn-open"
 				onClick={() => handleShowForm((show) => !show)}
 			>
-				{showForm ? "Close" : "Share a thought"}
+				{showForm ? "Close" : "➕"}
 			</button>
 		</header>
 	);

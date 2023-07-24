@@ -5,7 +5,7 @@
 	margin-bottom: 1.6rem;
 	padding: 1.6rem 2.4rem;
 	letter-spacing: -1px;
-	border-radius: 2rem;
+	border-radius: 5rem;
 	display: flex;
 	align-items: center;
 	gap: 2.4rem;
@@ -17,6 +17,7 @@
 	font-family: sans-serif;
 	padding: 0.3em 1rem;
 	border-radius: 100px;
+	color: #f0f0d8;
 }
 
 .vote-buttons {

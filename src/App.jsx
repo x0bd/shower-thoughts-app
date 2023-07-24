@@ -18,12 +18,12 @@ const CATEGORIES = [
 const initialFacts = [
 	{
 		id: 1,
-		text: "Threads vs Twitter is cool",
+		text: "the I'm not interested in your PAWG collection line by Morty has to be the best throw-away lines in the series",
 		source: "http://example.com",
-		category: "tech",
-		upVotes: 34,
-		downVotes: 2,
-		createdIn: 2023,
+		category: "nsfw",
+		upVotes: 666,
+		downVotes: 10,
+		createdIn: 2022,
 	},
 	{
 		id: 2,
@@ -36,17 +36,17 @@ const initialFacts = [
 	},
 	{
 		id: 3,
-		text: "the I'm not interested in your PAWG collection line by Morty has to be the best throw-away lines in the series",
+		text: "Threads vs Twitter is cool",
 		source: "http://example.com",
-		category: "nsfw",
-		upVotes: 666,
-		downVotes: 10,
-		createdIn: 2022,
+		category: "tech",
+		upVotes: 34,
+		downVotes: 2,
+		createdIn: 2023,
 	},
 ];
 
 const App = () => {
-	const [showForm, setShowForm] = useState(true);
+	const [showForm, setShowForm] = useState(false);
 	const [facts, setFacts] = useState(initialFacts);
 
 	return (
