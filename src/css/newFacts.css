@@ -1,0 +1,34 @@
+.fact-form {
+	background: var(--input-bg);
+	margin-bottom: var(--spacing-lg);
+	padding: var(--spacing-md) var(--spacing-lg);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	border-radius: 100rem;
+}
+
+.fact-form input {
+	width: 22.2rem;
+	background-color: inherit;
+	border: none;
+	border-radius: 10rem;
+	padding: var(--spacing-md);
+	font-size: var(--p-size);
+	color: inherit;
+	font-family: inherit;
+}
+
+.fact-form input:first-child {
+	flex-grow: 1;
+}
+
+.fact-form select {
+	padding: 2rem;
+	border: none;
+	border-radius: 7rem;
+	background: inherit;
+	font-family: inherit;
+	font-size: var(--p-size);
+	color: inherit;
+}

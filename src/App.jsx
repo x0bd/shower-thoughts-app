@@ -1,15 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
-
-const CATEGORIES = [
-	{ name: "tech", color: "#008080" },
-	{ name: "nsfw", color: "#db2777" },
-	{ name: "news", color: "#eac500" },
-	{ name: "web3", color: "#f97" },
-	{ name: "memes", color: "#8b5ffa" },
-	{ name: "anime", color: "#ef4444" },
-	{ name: "nutter", color: "#cbf8e7" },
-];
+import NewFactForm from "./components/NewFactForm";
 
 const initialFacts = [
 	{
@@ -48,12 +39,15 @@ const App = () => {
 	return (
 		<>
 			<Header handleShowForm={setShowForm} showForm={showForm} />
-			{showForm ? <NewFactForm /> : null}
+			{showForm ? (
+				<NewFactForm
+					setFacts={setFacts}
+					setShowForm={setShowForm}
+				/>
+			) : null}
 		</>
 	);
 };
-
-const NewFactForm = ({}) => {};
 
 const CategoryFilters = () => {};
 

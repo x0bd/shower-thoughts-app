@@ -7,12 +7,7 @@ const Header = ({ showForm, handleShowForm }) => {
 	return (
 		<header className="header">
 			<div className="logo">
-				<img
-					src={Logo}
-					alt="Shower Thoughts"
-					height="68"
-					width="68"
-				/>
+				<img src={Logo} alt="Shower Thoughts" />
 				<h1>{appTitle}</h1>
 			</div>
 			<button
