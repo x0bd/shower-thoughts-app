@@ -1,10 +1,38 @@
 :root {
-	--background-color: #e2e2df;
-	--text-color: #8c8c8c;
-	--heading-color: #2d2d2d;
-	--input-card-color: #ddd;
-	--input-text-color: #fafaf9;
-	--thought-card-color: #fff;
+	/* TEXT */
+
+	--body-font: "Poppins", sans-serif;
+	--heading-font: "Anek Telugu", sans-serif;
+	--h1-size: 9.4rem;
+	--h2-size: 5rem;
+	--h3-size: 4rem;
+	--h4-size: 3.2rem;
+	--h5-size: 2.8rem;
+	--h6-size: 2.2rem;
+	--h1-height: 10.8rem;
+	--h2-height: 7.5rem;
+	--p-size: 1.8rem;
+	--p-height: 2.6rem;
+	--secondary-text-size: 1.4rem;
+	--secondary-text-height: 1.8rem;
+	--button-size: 1.6rem;
+
+	/* COLORS */
+	--bg-white: #fbfbfb;
+	--input-bg: #f0f0f0;
+	--heading-text-color: #2c2a2f;
+	--main-text-color: #6b696f;
+	--input-text-color: #9c939a;
+	--primary-accent: #cbf8e7;
+	--primary-text-color: #2b292e;
+	--text-grey: #c3c2c6;
+
+	/* SPACING */
+	--spacing-sm: 0.8rem;
+	--spacing-md: 1.6rem;
+	--spacing-lg: 3.2rem;
+	--spacing-xl: 64rem;
+	--standard-width: 120rem;
 }
 
 html {

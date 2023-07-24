@@ -8,6 +8,7 @@ const CATEGORIES = [
 	{ name: "web3", color: "#f97" },
 	{ name: "memes", color: "#8b5ffa" },
 	{ name: "anime", color: "#ef4444" },
+	{ name: "nutter", color: "#cbf8e7" },
 ];
 
 const initialFacts = [
