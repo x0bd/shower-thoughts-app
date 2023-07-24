@@ -1,17 +1,7 @@
 import { useState } from "react";
 import "../css/newFacts.css";
 
-const CATEGORIES = [
-	{ name: "tech", color: "#008080" },
-	{ name: "nsfw", color: "#db2777" },
-	{ name: "news", color: "#eac500" },
-	{ name: "web3", color: "#f97" },
-	{ name: "memes", color: "#8b5ffa" },
-	{ name: "anime", color: "#ef4444" },
-	{ name: "nutter", color: "#cbf8e7" },
-];
-
-const NewFactForm = ({ setFacts, setShowForm }) => {
+const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 	const [text, setText] = useState("");
 	const [source, setSource] = useState("http://example.com");
 	const [category, setCategory] = useState("");
