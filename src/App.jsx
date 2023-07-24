@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "./assets/logo.png";
+import Header from "./components/Header";
 
 const CATEGORIES = [
 	{ name: "tech", color: "#008080" },
@@ -44,4 +44,21 @@ const initialFacts = [
 const App = () => {
 	const [showForm, setShowForm] = useState(true);
 	const [facts, setFacts] = useState(initialFacts);
+
+	return (
+		<>
+			<Header handleShowForm={setShowForm} showForm={showForm} />
+			{showForm ? <NewFactForm /> : null}
+		</>
+	);
 };
+
+const NewFactForm = ({}) => {};
+
+const CategoryFilters = () => {};
+
+const FactList = () => {};
+
+const Fact = () => {};
+
+export default App;
