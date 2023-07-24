@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import NewFactForm from "./components/NewFactForm";
+import CategoryFilters from "./components/CategoryFilters";
+import FactList from "./components/FactList";
 
 const initialFacts = [
 	{
@@ -45,14 +47,12 @@ const App = () => {
 					setShowForm={setShowForm}
 				/>
 			) : null}
+			<main className="main">
+				<CategoryFilters />
+				<FactList facts={facts} />
+			</main>
 		</>
 	);
 };
-
-const CategoryFilters = () => {};
-
-const FactList = () => {};
-
-const Fact = () => {};
 
 export default App;
