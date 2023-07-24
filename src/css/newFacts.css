@@ -32,3 +32,14 @@
 	font-size: var(--p-size);
 	color: inherit;
 }
+
+.fact-form span {
+	font-weight: 600;
+	font-size: var(--p-size);
+}
+
+@media (max-width: 100rem) {
+	body {
+		padding: var(--spacing-lg) var(--spacing-xl);
+	}
+}

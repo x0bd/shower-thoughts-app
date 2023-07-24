@@ -51,7 +51,7 @@ const NewFactForm = ({ setFacts, setShowForm }) => {
 				placeholder="yes, share that shower thought lol..."
 				onChange={(e) => setText(e.target.value)}
 			/>
-			<span style={{ fontSize: "1.6rem" }}>{200 - textLength}</span>
+			<span>{200 - textLength}</span>
 
 			<select
 				value={category}
