@@ -19,7 +19,7 @@
 
 	/* COLORS */
 	--bg-white: #f0f0fb;
-	--input-bg: #eff0f3;
+	--input-bg: #e9e4f7;
 	--heading-text-color: #2c2a2f;
 	--main-text-color: #6b696f;
 	--input-text-color: #9c939a;
@@ -87,6 +87,27 @@ body {
 	transition: 0.3s;
 }
 
+.cta {
+	background: -webkit-linear-gradient(225deg, #f97, #8b5ffa, #1eeba3) 0%
+		0% / 300% 300%;
+	background-size: 200% auto;
+	-webkit-animation: gradient_move 3s ease infinite;
+	animation: gradient_move 3s ease-in-out infinite;
+	transition: all 0.3s ease-in-out;
+}
+
+@-webkit-keyframes gradient_move {
+	0% {
+		background-position: 0% 92%;
+	}
+	50% {
+		background-position: 100% 9%;
+	}
+	100% {
+		background-position: 0% 92%;
+	}
+}
+
 .btn:hover {
 	transform: scale(105%) rotate(-1.25deg);
 }
@@ -94,4 +115,8 @@ body {
 .btn-large {
 	font-size: 2rem;
 	padding: 2rem 3.2rem 1.7rem;
+}
+
+.hidden {
+	display: none;
 }

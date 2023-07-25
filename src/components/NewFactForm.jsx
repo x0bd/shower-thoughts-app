@@ -53,7 +53,10 @@ const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 					</option>
 				))}
 			</select>
-			<button onClick={handleSubmit} className="btn btn-large">
+			<button
+				onClick={handleSubmit}
+				className="btn cta hidden btn-large"
+			>
 				Post
 			</button>
 		</form>

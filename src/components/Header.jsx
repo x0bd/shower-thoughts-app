@@ -11,7 +11,7 @@ const Header = ({ showForm, handleShowForm }) => {
 				<h1>{appTitle}</h1>
 			</div>
 			<button
-				className="btn btn-large btn-open"
+				className="btn cta btn-large btn-open"
 				onClick={() => handleShowForm((show) => !show)}
 			>
 				{showForm ? "Close" : "➕"}

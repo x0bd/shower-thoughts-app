@@ -24,8 +24,8 @@
 }
 
 .fact-form select {
-	padding: 2rem;
-	border: none;
+	padding: 1rem;
+	border: 1px solid var();
 	border-radius: 7rem;
 	background: inherit;
 	font-family: inherit;

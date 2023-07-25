@@ -12,7 +12,7 @@ const CATEGORIES = [
 	{ name: "web3", color: "#f97" },
 	{ name: "memes", color: "#8b5ffa" },
 	{ name: "anime", color: "#ef4444" },
-	{ name: "nutter", color: "#1eeba3" },
+	{ name: "shitpost", color: "#1eeba3" },
 ];
 
 const initialFacts = [
@@ -36,7 +36,7 @@ const initialFacts = [
 	},
 	{
 		id: 3,
-		text: "Threads vs Twitter is cool",
+		text: "Elon Musk is cool, threads vs twitter is cool, he changed it from titter to X, what a cool person he is",
 		source: "http://example.com",
 		category: "tech",
 		upVotes: 34,
