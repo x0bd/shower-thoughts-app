@@ -6,6 +6,7 @@ const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 	const [source, setSource] = useState("http://example.com");
 	const [category, setCategory] = useState("");
 	const textLength = text.length;
+	const [error, setError] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -29,15 +30,22 @@ const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 
 			setShowForm(false);
 		} else {
-			alert("Error 😂");
+			setError(true);
+			setTimeout(() => setError(false), 2000);
 		}
 	};
 
 	return (
-		<form className="fact-form" onSubmit={handleSubmit}>
+		<form
+			className="fact-form"
+			onSubmit={handleSubmit}
+			style={error ? { color: "#ef4444", fontWeight: "900" } : {}}
+		>
 			<input
 				type="text"
-				value={text}
+				value={
+					error ? "Internal Error, please try again 😥" : text
+				}
 				placeholder="yes, share that shower thought lol..."
 				onChange={(e) => setText(e.target.value)}
 			/>
