@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import NewFactForm from "./components/NewFactForm";
 import CategoryFilters from "./components/CategoryFilters";
 import FactList from "./components/FactList";
+import supabase from "./supabase";
 
 const CATEGORIES = [
 	{ name: "all", color: "crimson" },
@@ -68,7 +69,18 @@ const initialFacts = [
 
 const App = () => {
 	const [showForm, setShowForm] = useState(false);
-	const [facts, setFacts] = useState(initialFacts);
+	const [facts, setFacts] = useState([]);
+	// useEffect
+
+	useEffect(() => {
+		async function getThoughts() {
+			const { data: thoughts, error } = await supabase
+				.from("thoughts")
+				.select("*");
+			setFacts(thoughts);
+		}
+		getThoughts();
+	}, []);
 
 	return (
 		<>
