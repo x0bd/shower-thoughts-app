@@ -18,9 +18,9 @@ const CATEGORIES = [
 const initialFacts = [
 	{
 		id: 1,
-		text: "This line and scene from Rick and Morty lives rent-free in my head - `N-NO, I DON'T WANT TO SEE YOUR PA*G COLLECTION.`",
+		text: "This line and scene from Rick and Morty lives rent-free in my head - `N-NO, I DON'T WANT TO SEE YOUR POG COLLECTION.`",
 		source: "http://example.com",
-		category: "nsfw",
+		category: "memes",
 		upVotes: 4500,
 		downVotes: 31,
 		createdIn: 2022,
@@ -34,15 +34,17 @@ const initialFacts = [
 		downVotes: 23,
 		createdIn: 2023,
 	},
+
 	{
-		id: 3,
-		text: "Waking up from a good dream and then going back to sleep and the dream picks up where it left off is better than winning the lottery or having sex ",
+		id: 5,
+		text: "Margarine is ONE MOLECULE away from plastic; and shares 27 ingredients with paint. Bon Appetit!",
 		source: "http://example.com",
-		category: "shitpost",
-		upVotes: 1167,
-		downVotes: 3,
+		category: "awful",
+		upVotes: 1600,
+		downVotes: 34,
 		createdIn: 2023,
 	},
+
 	{
 		id: 4,
 		text: "Never wear a Rick and Morty T-shirt that says 'Welcome Back To Reality!!' while going to a birthday of a 1 year old.",
@@ -52,13 +54,14 @@ const initialFacts = [
 		downVotes: 2,
 		createdIn: 2023,
 	},
+
 	{
-		id: 5,
-		text: "Margarine is ONE MOLECULE away from plastic; and shares 27 ingredients with paint. Bon Appetit!",
+		id: 3,
+		text: "Waking up from a good dream and then going back to sleep and the dream picks up where it left off is better than winning the lottery or having sex ",
 		source: "http://example.com",
-		category: "awful",
-		upVotes: 1600,
-		downVotes: 34,
+		category: "shitpost",
+		upVotes: 1167,
+		downVotes: 3,
 		createdIn: 2023,
 	},
 ];

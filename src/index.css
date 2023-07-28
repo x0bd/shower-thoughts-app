@@ -120,3 +120,10 @@ body {
 .hidden {
 	display: none;
 }
+
+@media (max-width: 600px) {
+	.btn-large {
+		padding: 1rem;
+		border-radius: 50px;
+	}
+}
