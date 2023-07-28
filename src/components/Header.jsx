@@ -1,4 +1,3 @@
-import Logo from "../assets/logo.png";
 import "../css/header.css";
 
 const Header = ({ showForm, handleShowForm }) => {
@@ -7,15 +6,14 @@ const Header = ({ showForm, handleShowForm }) => {
 	return (
 		<header className="header">
 			<div className="logo">
-				{/* <img src={Logo} alt="Shower Thoughts" /> */}
-				<h1>🚿</h1>
+				<i class="fa-solid fa-shower"></i>
 				<h1>{appTitle}</h1>
 			</div>
 			<button
 				className="btn cta btn-large btn-open"
 				onClick={() => handleShowForm((show) => !show)}
 			>
-				{showForm ? "Close" : "➕"}
+				{showForm ? "Close" : <i class="fa-solid fa-plus"></i>}
 			</button>
 		</header>
 	);

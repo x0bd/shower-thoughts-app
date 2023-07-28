@@ -2,7 +2,7 @@
 	/* TEXT */
 
 	--body-font: "Poppins", sans-serif;
-	--heading-font: "Anek Telugu", sans-serif;
+	--heading-font: "M PLUS Rounded 1c", sans-serif;
 	--h1-size: 4.2rem;
 	--h2-size: 5rem;
 	--h3-size: 4rem;
@@ -51,6 +51,7 @@ body {
 	color: var(--main-text-color);
 	font-family: "Poppins", sans-serif;
 	padding: 4.8rem 6.4rem;
+	transition: all 0.3s ease;
 }
 
 .main {

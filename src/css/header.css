@@ -11,9 +11,8 @@
 	gap: var(--spacing-md);
 }
 
-.logo img {
-	width: 5.2rem;
-	height: 5.2rem;
+.logo i {
+	font-size: 4rem;
 }
 
 h1 {
