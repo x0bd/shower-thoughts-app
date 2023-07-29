@@ -70,6 +70,7 @@ const initialFacts = [
 const App = () => {
 	const [showForm, setShowForm] = useState(false);
 	const [facts, setFacts] = useState([]);
+	const [isLoading, SetIsLoading] = useState();
 	// useEffect
 
 	useEffect(() => {
@@ -98,6 +99,10 @@ const App = () => {
 			</main>
 		</>
 	);
+};
+
+const Loader = () => {
+	return <p>loading...</p>;
 };
 
 export default App;
