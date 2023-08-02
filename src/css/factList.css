@@ -44,6 +44,10 @@
 	background-color: #efefe5;
 }
 
+.vote-buttons button:disabled {
+	background-color: var(--input-bg);
+}
+
 @media (max-width: 1100px) {
 	.fact {
 		flex-direction: column;

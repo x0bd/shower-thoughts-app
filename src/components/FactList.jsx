@@ -1,7 +1,7 @@
 import "../css/factList.css";
 import supabase from "../supabase";
 
-import React from "react";
+import React, { useState } from "react";
 
 const FactList = ({ setFacts, facts, categories }) => {
 	if (facts.length === 0) {
@@ -25,10 +25,13 @@ const FactList = ({ setFacts, facts, categories }) => {
 };
 
 const Fact = ({ fact, categories, setFacts }) => {
-	const handleVote = async () => {
+	const [isUpdating, setIsUpdating] = useState(false);
+
+	const handleVote = async (columnName) => {
+		setIsUpdating(true);
 		const { data: updatedFact, error } = await supabase
 			.from("thoughts")
-			.update({ upVotes: fact.upVotes + 1 })
+			.update({ [columnName]: fact[columnName] + 1 })
 			.eq("id", fact.id)
 			.select();
 
@@ -37,6 +40,7 @@ const Fact = ({ fact, categories, setFacts }) => {
 			setFacts((facts) =>
 				facts.map((f) => (f.id === fact.id ? updatedFact[0] : f))
 			);
+		setIsUpdating(false);
 	};
 
 	return (
@@ -53,8 +57,18 @@ const Fact = ({ fact, categories, setFacts }) => {
 				{fact.category}
 			</span>
 			<div className="vote-buttons">
-				<button onClick={handleVote}>😂 {fact.upVotes}</button>
-				<button>🤮 {fact.downVotes}</button>
+				<button
+					onClick={() => handleVote("upVotes")}
+					disabled={isUpdating}
+				>
+					😂 {fact.upVotes}
+				</button>
+				<button
+					onClick={() => handleVote("downVotes")}
+					disabled={isUpdating}
+				>
+					🤮 {fact.downVotes}
+				</button>
 			</div>
 		</li>
 	);
