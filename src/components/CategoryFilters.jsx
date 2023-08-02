@@ -1,6 +1,6 @@
 import "../css/category.css";
 
-const CategoryFilters = ({ CATEGORIES }) => {
+const CategoryFilters = ({ CATEGORIES, setCurrentCat }) => {
 	return (
 		<aside>
 			<ul>
@@ -13,6 +13,7 @@ const CategoryFilters = ({ CATEGORIES }) => {
 									backgroundColor: cat.color,
 									color: "#f0f0f0",
 								}}
+								onClick={() => setCurrentCat(cat.name)}
 							>
 								{cat.name}
 							</button>

@@ -71,24 +71,29 @@ const App = () => {
 	const [showForm, setShowForm] = useState(false);
 	const [facts, setFacts] = useState([]);
 	const [isLoading, SetIsLoading] = useState(false);
-	// useEffect
+	const [currentCat, setCurrentCat] = useState("all");
 
 	useEffect(() => {
 		async function getThoughts() {
 			SetIsLoading(true);
-			const { data: thoughts, error } = await supabase
-				.from("thoughts")
-				.select("*")
+
+			let query = supabase.from("thoughts").select("*");
+
+			if (currentCat !== "all") {
+				query = query.eq("category", currentCat);
+			}
+
+			const { data: thoughts, error } = await query
 				.order("upVotes", { ascending: false })
 				.limit(100);
 
-			if (!error) setFacts;
+			if (!error) setFacts(thoughts);
 			else alert("ERROR, Check Your Internet Connection");
-			setFacts(thoughts);
+
 			SetIsLoading(false);
 		}
 		getThoughts();
-	}, []);
+	}, [currentCat]);
 
 	return (
 		<>
@@ -101,7 +106,10 @@ const App = () => {
 				/>
 			) : null}
 			<main className="main">
-				<CategoryFilters CATEGORIES={CATEGORIES} />
+				<CategoryFilters
+					CATEGORIES={CATEGORIES}
+					setCurrentCat={setCurrentCat}
+				/>
 				{isLoading ? (
 					<Loader />
 				) : (

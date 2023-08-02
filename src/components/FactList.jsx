@@ -3,6 +3,10 @@ import "../css/factList.css";
 import React from "react";
 
 const FactList = ({ facts, categories }) => {
+	if (facts.length === 0) {
+		return <p className="message">Go and Shower 🚿</p>;
+	}
+
 	return (
 		<section>
 			<ul className="facts-list">
