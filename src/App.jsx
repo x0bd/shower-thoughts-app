@@ -70,15 +70,22 @@ const initialFacts = [
 const App = () => {
 	const [showForm, setShowForm] = useState(false);
 	const [facts, setFacts] = useState([]);
-	const [isLoading, SetIsLoading] = useState();
+	const [isLoading, SetIsLoading] = useState(false);
 	// useEffect
 
 	useEffect(() => {
 		async function getThoughts() {
+			SetIsLoading(true);
 			const { data: thoughts, error } = await supabase
 				.from("thoughts")
-				.select("*");
+				.select("*")
+				.order("upVotes", { ascending: false })
+				.limit(100);
+
+			if (!error) setFacts;
+			else alert("ERROR, Check Your Internet Connection");
 			setFacts(thoughts);
+			SetIsLoading(false);
 		}
 		getThoughts();
 	}, []);
@@ -95,14 +102,18 @@ const App = () => {
 			) : null}
 			<main className="main">
 				<CategoryFilters CATEGORIES={CATEGORIES} />
-				<FactList facts={facts} categories={CATEGORIES} />
+				{isLoading ? (
+					<Loader />
+				) : (
+					<FactList facts={facts} categories={CATEGORIES} />
+				)}
 			</main>
 		</>
 	);
 };
 
 const Loader = () => {
-	return <p>loading...</p>;
+	return <p className="message">loading...</p>;
 };
 
 export default App;
