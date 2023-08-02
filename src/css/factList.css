@@ -55,3 +55,6 @@
 		gap: 1.2rem;
 	}
 }
+
+@media (max-width: 350px) {
+}

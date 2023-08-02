@@ -35,3 +35,10 @@ h1 {
 		border-radius: 50px;
 	}
 }
+
+@media (max-width: 350px) {
+	header {
+		width: 100%;
+		gap: 10px;
+	}
+}
