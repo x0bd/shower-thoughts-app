@@ -113,7 +113,11 @@ const App = () => {
 				{isLoading ? (
 					<Loader />
 				) : (
-					<FactList facts={facts} categories={CATEGORIES} />
+					<FactList
+						facts={facts}
+						categories={CATEGORIES}
+						setFacts={setFacts}
+					/>
 				)}
 			</main>
 		</>

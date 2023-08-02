@@ -1,8 +1,9 @@
 import "../css/factList.css";
+import supabase from "../supabase";
 
 import React from "react";
 
-const FactList = ({ facts, categories }) => {
+const FactList = ({ setFacts, facts, categories }) => {
 	if (facts.length === 0) {
 		return <p className="message">Go and Shower 🚿</p>;
 	}
@@ -15,6 +16,7 @@ const FactList = ({ facts, categories }) => {
 						fact={fact}
 						key={fact.id}
 						categories={categories}
+						setFacts={setFacts}
 					/>
 				))}
 			</ul>
@@ -22,7 +24,21 @@ const FactList = ({ facts, categories }) => {
 	);
 };
 
-const Fact = ({ fact, categories }) => {
+const Fact = ({ fact, categories, setFacts }) => {
+	const handleVote = async () => {
+		const { data: updatedFact, error } = await supabase
+			.from("thoughts")
+			.update({ upVotes: fact.upVotes + 1 })
+			.eq("id", fact.id)
+			.select();
+
+		console.log(updatedFact);
+		if (!error)
+			setFacts((facts) =>
+				facts.map((f) => (f.id === fact.id ? updatedFact[0] : f))
+			);
+	};
+
 	return (
 		<li className="fact">
 			<p>{fact.text}</p>
@@ -37,7 +53,7 @@ const Fact = ({ fact, categories }) => {
 				{fact.category}
 			</span>
 			<div className="vote-buttons">
-				<button>😂 {fact.upVotes}</button>
+				<button onClick={handleVote}>😂 {fact.upVotes}</button>
 				<button>🤮 {fact.downVotes}</button>
 			</div>
 		</li>
