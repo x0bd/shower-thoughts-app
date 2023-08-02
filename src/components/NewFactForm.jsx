@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/newFacts.css";
+import supabase from "../supabase";
 
 const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 	const [text, setText] = useState("");
@@ -7,22 +8,21 @@ const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 	const [category, setCategory] = useState("");
 	const textLength = text.length;
 	const [error, setError] = useState(false);
+	const [isUploading, setIsUploading] = useState(false);
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		if (text && source && category && textLength <= 200) {
-			const newFact = {
-				id: Math.round(Math.random() * 10000),
-				text,
-				source,
-				category,
-				upVotes: 0,
-				downVotes: 0,
-				createdIn: new Date().getFullYear(),
-			};
+			setIsUploading(true);
+			const { data: newFact, error } = await supabase
+				.from("thoughts")
+				.insert([{ text, source, category }])
+				.select();
 
-			setFacts((facts) => [newFact, ...facts]);
+			setIsUploading(false);
+
+			setFacts((facts) => [newFact[0], ...facts]);
 
 			setText("");
 			setSource("http://example.com");
@@ -48,12 +48,14 @@ const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 				}
 				placeholder="yes, share that shower thought lol..."
 				onChange={(e) => setText(e.target.value)}
+				disabled={isUploading}
 			/>
 			<span>{200 - textLength}</span>
 
 			<select
 				value={category}
 				onChange={(e) => setCategory(e.target.value)}
+				disabled={isUploading}
 			>
 				{CATEGORIES.map((cat) => (
 					<option value={cat.name} key={cat.name}>
@@ -64,6 +66,7 @@ const NewFactForm = ({ setFacts, setShowForm, CATEGORIES }) => {
 			<button
 				onClick={handleSubmit}
 				className="btn cta hidden btn-large"
+				disabled={isUploading}
 			>
 				Post
 			</button>
